@@ -4,9 +4,9 @@ const AppContext = React.createContext();
 
 export function AppProvider({ children }) {
     const [appState, setAppState] = React.useState({
-        user: "Jerry",
-        favoriteDogs: [],
-        dogImages: [],
+        user: "user",
+        friends: [],
+        wizardDetails: [],
     });
 
     function updateAppState(newStateValues) {
