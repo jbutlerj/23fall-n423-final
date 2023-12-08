@@ -1,12 +1,19 @@
 import React from "react";
 import { Popup, Button, Image, Grid } from "semantic-ui-react";
+import styles from "@/styles/WizardImage.module.scss";
 
-export default function WizardImage({ src, children, onClick }) {
+export default function WizardImage({ src, name, children, onClick }) {
     return (
         <>
-            <Grid.Column>
+            <div className={styles.imageContainer}>
                 <Popup
-                    trigger={<Image src={src} />}
+                    trigger={
+                        <Image
+                            className={styles.wizardImages}
+                            src={src}
+                            size="medium"
+                        />
+                    }
                     on="click"
                     content={
                         <Button
@@ -17,7 +24,8 @@ export default function WizardImage({ src, children, onClick }) {
                         />
                     }
                 />
-            </Grid.Column>
+                <h3>{name}</h3>
+            </div>
         </>
     );
 }

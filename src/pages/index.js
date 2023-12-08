@@ -1,10 +1,13 @@
 import React from "react";
+import Hero from "@/components/Hero";
 import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
     return (
         <>
-            <h1>Home</h1>
+            <section>
+                <Hero imageURL="/homehero.jpeg" callout="Hogwarts FriendBook" />
+            </section>
         </>
     );
 }

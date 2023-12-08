@@ -3,6 +3,7 @@ import useAppState from "@/useHooks/useAppState";
 import { Grid } from "semantic-ui-react";
 import FriendInfo from "@/components/FriendInfo";
 import { useRouter } from "next/router";
+import Hero from "@/components/Hero";
 import styles from "@/styles/Friends.module.scss";
 
 export default function Friends() {
@@ -12,7 +13,9 @@ export default function Friends() {
 
     return (
         <>
-            <h1>Friends</h1>
+            <section className={styles.heroSection}>
+                <Hero imageURL="/friendshero.jpg" callout="Friends" />
+            </section>
             <Grid>
                 <Grid.Row columns="5">
                     {appState.friends.map((wizardImage) => {
