@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Loader } from "semantic-ui-react";
+import { Loader, Image } from "semantic-ui-react";
 import styles from "@/styles/FriendDetails.module.scss";
 import useAppState from "@/useHooks/useAppState";
 
