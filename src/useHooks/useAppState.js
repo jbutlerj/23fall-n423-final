@@ -6,7 +6,10 @@ export function AppProvider({ children }) {
     const [appState, setAppState] = React.useState({
         user: "user",
         friends: [],
-        wizardDetails: [],
+        gryffindor: [],
+        slytherin: [],
+        hufflepuff: [],
+        ravenclaw: [],
     });
 
     function updateAppState(newStateValues) {
