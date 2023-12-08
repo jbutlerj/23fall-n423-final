@@ -34,7 +34,7 @@ export default function FriendDetails(props) {
 
     return (
         <>
-            {/* <Loader active={friendData.loading} />
+            <Loader active={friendData.loading} />
             {
                 // if this statement
                 friendData.id ? (
@@ -64,7 +64,7 @@ export default function FriendDetails(props) {
                         )}
                     </>
                 )
-            } */}
+            }
         </>
     );
 }
