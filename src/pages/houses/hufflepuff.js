@@ -2,7 +2,6 @@ import React from "react";
 import Hero from "@/components/Hero";
 import styles from "@/styles/Houses.module.scss";
 import { Grid } from "semantic-ui-react";
-
 import useAppState from "@/useHooks/useAppState";
 import WizardImage from "@/components/WizardImage";
 
@@ -18,11 +17,11 @@ export default function Hufflepuff() {
             appState.hufflepuffLoading === false
         ) {
             // console.log("test");
-            getWizardDetails();
+            getHouseRoster();
         }
     });
 
-    function getWizardDetails() {
+    function getHouseRoster() {
         fetch(`https://hp-api.onrender.com/api/characters/house/hufflepuff`)
             .then((r) => r.json())
             .then((r) => {

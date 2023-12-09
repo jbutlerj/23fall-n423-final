@@ -5,7 +5,7 @@ import { Grid } from "semantic-ui-react";
 import useAppState from "@/useHooks/useAppState";
 import WizardImage from "@/components/WizardImage";
 
-export default function Gryffindor() {
+export default function gryffindor() {
     const [gryffindor, setGryffindor] = React.useState([]);
     const appState = useAppState();
 
@@ -17,14 +17,12 @@ export default function Gryffindor() {
             appState.gryffindorLoading === false
         ) {
             // console.log("test");
-            getWizardDetails();
+            getHouseRoster();
         }
     });
 
-    function getWizardDetails() {
-        fetch(
-            `https://api.potterdb.com/v1/characters?filter[house_eq]=Gryffindor`
-        )
+    function getHouseRoster() {
+        fetch(`https://hp-api.onrender.com/api/characters/house/gryffindor`)
             .then((r) => r.json())
             .then((r) => {
                 appState.updateAppState({
