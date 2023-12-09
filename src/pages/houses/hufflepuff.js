@@ -26,7 +26,10 @@ export default function Hufflepuff() {
         fetch(`https://hp-api.onrender.com/api/characters/house/hufflepuff`)
             .then((r) => r.json())
             .then((r) => {
-                appState.updateAppState({ hufflepuff: r });
+                appState.updateAppState({
+                    hufflepuff: r,
+                    hufflepuffLoading: false,
+                });
                 // console.log(hufflepuff);
             })
 

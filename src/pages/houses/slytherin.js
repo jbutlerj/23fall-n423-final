@@ -25,7 +25,10 @@ export default function slytherin() {
         fetch(`https://hp-api.onrender.com/api/characters/house/slytherin`)
             .then((r) => r.json())
             .then((r) => {
-                appState.updateAppState({ slytherin: r });
+                appState.updateAppState({
+                    slytherin: r,
+                    slytherinLoading: false,
+                });
                 // console.log(slytherin);
             })
 

@@ -22,12 +22,14 @@ export default function Gryffindor() {
     });
 
     function getWizardDetails() {
-        fetch(`https://hp-api.onrender.com/api/characters/house/gryffindor`)
+        fetch(
+            `https://api.potterdb.com/v1/characters?filter[house_eq]=Gryffindor`
+        )
             .then((r) => r.json())
             .then((r) => {
                 appState.updateAppState({
                     gryffindor: r,
-                    wizardImageLoading: false,
+                    gryffindorLoading: false,
                 });
                 // console.log(gryffindor);
             })

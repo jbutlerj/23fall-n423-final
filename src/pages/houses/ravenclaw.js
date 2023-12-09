@@ -25,7 +25,10 @@ export default function ravenclaw() {
         fetch(`https://hp-api.onrender.com/api/characters/house/ravenclaw`)
             .then((r) => r.json())
             .then((r) => {
-                appState.updateAppState({ ravenclaw: r });
+                appState.updateAppState({
+                    ravenclaw: r,
+                    ravenclawLoading: false,
+                });
                 // console.log(ravenclaw);
             })
 
