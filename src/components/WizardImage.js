@@ -1,5 +1,5 @@
 import React from "react";
-import { Popup, Button, Image, Grid } from "semantic-ui-react";
+import { Popup, Button, Image } from "semantic-ui-react";
 import styles from "@/styles/WizardImage.module.scss";
 
 export default function WizardImage({ src, name, children, onClick }) {

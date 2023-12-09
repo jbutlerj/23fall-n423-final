@@ -42,7 +42,7 @@ export default function Gryffindor() {
                 />
             </section>
             <section className={styles.houseGrid}>
-                <Grid centered columns="5">
+                <Grid centered columns="4">
                     {appState.gryffindor.map((wizardImage) => {
                         return (
                             <>

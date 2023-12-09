@@ -43,7 +43,7 @@ export default function Hufflepuff() {
                 />
             </section>
             <section className={styles.houseGrid}>
-                <Grid centered columns="5">
+                <Grid centered columns="4">
                     {appState.hufflepuff.map((wizardImage) => {
                         return (
                             <>
