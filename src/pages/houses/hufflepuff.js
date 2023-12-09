@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import styles from "@/styles/Houses.module.scss";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
 import useAppState from "@/useHooks/useAppState";
 import WizardImage from "@/components/WizardImage";
@@ -11,6 +11,16 @@ export default function Hufflepuff() {
     const appState = useAppState();
 
     // console.log(appState);
+
+    React.useEffect(() => {
+        if (
+            appState.hufflepuff.length === 0 &&
+            appState.hufflepuffLoading === false
+        ) {
+            // console.log("test");
+            getWizardDetails();
+        }
+    });
 
     function getWizardDetails() {
         fetch(`https://hp-api.onrender.com/api/characters/house/hufflepuff`)
@@ -35,12 +45,6 @@ export default function Hufflepuff() {
         <>
             <section className="hero">
                 <Hero imageURL="/hufflepuffhero.jpeg" callout="Hufflepuff" />
-                <Button
-                    content="Load Wizards"
-                    icon="sync"
-                    color="blue"
-                    onClick={getWizardDetails}
-                />
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">

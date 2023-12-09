@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import styles from "@/styles/Houses.module.scss";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import useAppState from "@/useHooks/useAppState";
 import WizardImage from "@/components/WizardImage";
 
@@ -11,11 +11,24 @@ export default function Gryffindor() {
 
     // console.log(appState);
 
+    React.useEffect(() => {
+        if (
+            appState.gryffindor.length === 0 &&
+            appState.gryffindorLoading === false
+        ) {
+            // console.log("test");
+            getWizardDetails();
+        }
+    });
+
     function getWizardDetails() {
         fetch(`https://hp-api.onrender.com/api/characters/house/gryffindor`)
             .then((r) => r.json())
             .then((r) => {
-                appState.updateAppState({ gryffindor: r });
+                appState.updateAppState({
+                    gryffindor: r,
+                    wizardImageLoading: false,
+                });
                 // console.log(gryffindor);
             })
 
@@ -34,12 +47,6 @@ export default function Gryffindor() {
         <>
             <section className="hero">
                 <Hero imageURL="/gryffindorhero.jpeg" callout="Gryffindor" />
-                <Button
-                    content="Load Wizards"
-                    icon="sync"
-                    color="blue"
-                    onClick={getWizardDetails}
-                />
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">

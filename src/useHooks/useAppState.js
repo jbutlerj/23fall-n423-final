@@ -10,6 +10,10 @@ export function AppProvider({ children }) {
         slytherin: [],
         hufflepuff: [],
         ravenclaw: [],
+        gryffindorLoading: false,
+        slytherinLoading: false,
+        hufflepuffLoading: false,
+        ravenclawLoading: false,
     });
 
     function updateAppState(newStateValues) {
