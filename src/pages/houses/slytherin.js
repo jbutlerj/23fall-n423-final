@@ -46,7 +46,11 @@ export default function slytherin() {
     return (
         <>
             <section className="hero">
-                <Hero imageURL="/slytherinhero.jpeg" callout="Slytherin" />
+                <Hero
+                    imageURL="/slytherinhero.jpeg"
+                    headerText="Slytherin"
+                    attributes="Ambition, Cunning, Leadership, and Resourcefulness"
+                />
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">

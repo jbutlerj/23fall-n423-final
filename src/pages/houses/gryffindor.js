@@ -46,7 +46,11 @@ export default function gryffindor() {
     return (
         <>
             <section className="hero">
-                <Hero imageURL="/gryffindorhero.jpeg" callout="Gryffindor" />
+                <Hero
+                    imageURL="/gryffindorhero.jpeg"
+                    headerText="Gryffindor"
+                    attributes="Courage, Bravery, Nerve, and Chivalry"
+                />
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">

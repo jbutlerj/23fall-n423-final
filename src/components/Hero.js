@@ -8,8 +8,15 @@ export default function Hero(props) {
                 className={styles.hero}
                 style={{ backgroundImage: `url(${props.imageURL})` }}
             ></div>
-            <div className={styles.callout}>
-                <h1>{props.callout}</h1>
+            <div className={styles.container}>
+                <div className={styles.textContainerLeft}>
+                    <h1>{props.headerText}</h1>
+                    <h4>{props.subheader}</h4>
+                    <p>{props.filler}</p>
+                </div>
+                <div className={styles.textContainerRight}>
+                    <h3>{props.attributes}</h3>
+                </div>
             </div>
         </>
     );

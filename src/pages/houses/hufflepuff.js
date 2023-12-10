@@ -46,7 +46,11 @@ export default function Hufflepuff() {
     return (
         <>
             <section className="hero">
-                <Hero imageURL="/hufflepuffhero.jpeg" callout="Hufflepuff" />
+                <Hero
+                    imageURL="/hufflepuffhero.jpeg"
+                    headerText="Hufflepuff"
+                    attributes="Work, Patience, Justice, and Loyalty"
+                />
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">

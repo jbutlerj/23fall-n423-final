@@ -27,7 +27,11 @@ export default function Friends() {
     return (
         <>
             <section className="hero">
-                <Hero imageURL="/friendshero.jpg" callout="My Friends" />
+                <Hero
+                    imageURL="/friendshero.jpg"
+                    headerText="My Friends"
+                    attributes="Below are all of the wizards you've added as friends."
+                />
             </section>
             <section className={styles.friendGridContainer}>
                 <div className={styles.friendGrid}>

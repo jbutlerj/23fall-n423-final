@@ -51,6 +51,8 @@ export default function FriendDetails() {
                                 </div>
                                 <div className={styles.bottom}>
                                     <h3>House: {friendData.house}</h3>
+                                    <h3>Ancestry: {friendData.ancestry}</h3>
+                                    <h3>Patronus: {friendData.patronus}</h3>
                                 </div>
                             </div>
                         </div>

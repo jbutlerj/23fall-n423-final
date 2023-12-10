@@ -46,7 +46,11 @@ export default function ravenclaw() {
     return (
         <>
             <section className="hero">
-                <Hero imageURL="/ravenclawhero.jpeg" callout="Ravenclaw" />
+                <Hero
+                    imageURL="/ravenclawhero.jpeg"
+                    headerText="Ravenclaw"
+                    attributes="Intelligence, Learning, Wisdom, and Wit"
+                />
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">
