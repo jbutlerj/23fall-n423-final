@@ -1,14 +1,36 @@
 import React from "react";
 import "semantic-ui-css/semantic.css";
-import { Menu, Dropdown, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import Link from "next/link";
 import "@/styles/globals.css";
+import styles from "@/styles/Menu.module.scss";
 import { AppProvider } from "@/useHooks/useAppState";
 
 export default function App({ Component, pageProps }) {
     return (
         <AppProvider>
-            <Menu inverted>
+            <header className={styles.headerContainer}>
+                <nav className={styles.navbar}>
+                    <Link href="/">
+                        <Icon name="home" />
+                        Home
+                    </Link>
+                    <Link href="/friends">Friends</Link>
+                    <div className={styles.dropdown}>
+                        <button className={styles.dropbtn}>
+                            Houses
+                            <Icon name="caret down" />
+                        </button>
+                        <div className={styles.dropdownContent}>
+                            <Link href="/houses/gryffindor">Gryffindor</Link>
+                            <Link href="/houses/hufflepuff">Hufflepuff</Link>
+                            <Link href="/houses/ravenclaw">Ravenclaw</Link>
+                            <Link href="/houses/slytherin">Slytherin</Link>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            {/* <Menu inverted>
                 <Menu.Item as={Link} href="/">
                     <Icon name="home" />
                     Home
@@ -32,7 +54,7 @@ export default function App({ Component, pageProps }) {
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-            </Menu>
+            </Menu> */}
             <Component {...pageProps} />
         </AppProvider>
     );

@@ -4,37 +4,53 @@ import { Grid } from "semantic-ui-react";
 import FriendInfo from "@/components/FriendInfo";
 import { useRouter } from "next/router";
 import Hero from "@/components/Hero";
-import styles from "@/styles/Houses.module.scss";
+import styles from "@/styles/Friends.module.scss";
 
 export default function Friends() {
     const router = useRouter();
     const appState = useAppState();
-    console.log(appState);
+    console.log(appState.friends);
+
+    function deleteFriend(valuetosearch) {
+        for (var index = 0; index < appState.friends.length; index++) {
+            if (appState.friends[index].id == valuetosearch) {
+                return index;
+            }
+            console.log("wizindex", valuetosearch, index);
+            appState.updateAppState({
+                friends: appState.friends.splice(index, 1),
+            });
+        }
+        return null;
+    }
 
     return (
         <>
             <section className="hero">
                 <Hero imageURL="/friendshero.jpg" callout="My Friends" />
             </section>
-            <section className={styles.houseGrid}>
-                <Grid centered columns="4">
-                    {appState.friends.map((wizardImage) => {
+            <section className={styles.friendGridContainer}>
+                <div className={styles.friendGrid}>
+                    {appState.friends.map((wizard) => {
                         return (
                             <>
                                 <Grid.Column>
                                     {
                                         // if this statement
-                                        wizardImage.image ? (
+                                        wizard.image ? (
                                             // true - then do this
                                             <>
                                                 <FriendInfo
-                                                    key={wizardImage.id}
-                                                    src={wizardImage.image}
-                                                    name={wizardImage.name}
-                                                    onClick={() =>
+                                                    key={wizard.id}
+                                                    src={wizard.image}
+                                                    name={wizard.name}
+                                                    onClickInfo={() =>
                                                         router.push(
-                                                            `/friends/${wizardImage.id}`
+                                                            `/friends/${wizard.id}`
                                                         )
+                                                    }
+                                                    onClickDelete={() =>
+                                                        deleteFriend(wizard.id)
                                                     }
                                                 />
                                             </>
@@ -42,13 +58,16 @@ export default function Friends() {
                                             // false - else do this
                                             <>
                                                 <FriendInfo
-                                                    key={wizardImage.id}
+                                                    key={wizard.id}
                                                     src="/nopicfound.jpeg"
-                                                    name={wizardImage.name}
-                                                    onClick={() =>
+                                                    name={wizard.name}
+                                                    onClickInfo={() =>
                                                         router.push(
-                                                            `/friends/${wizardImage.id}`
+                                                            `/friends/${wizard.id}`
                                                         )
+                                                    }
+                                                    onClickDelete={() =>
+                                                        deleteFriend(wizard)
                                                     }
                                                 />
                                             </>
@@ -58,7 +77,7 @@ export default function Friends() {
                             </>
                         );
                     })}
-                </Grid>
+                </div>
             </section>
         </>
     );

@@ -1,10 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Loader, Image } from "semantic-ui-react";
+import { Loader, Image, Button } from "semantic-ui-react";
 import styles from "@/styles/FriendDetails.module.scss";
 import useAppState from "@/useHooks/useAppState";
 
-export default function FriendDetails(props) {
+export default function FriendDetails() {
     const router = useRouter();
     const appState = useAppState();
     const [friendData, setFriendData] = React.useState({ loading: true });

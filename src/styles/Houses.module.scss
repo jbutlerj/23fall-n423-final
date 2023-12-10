@@ -1,12 +1,9 @@
 .houseGrid {
-    width: 80;
+    width: 80%;
     margin: 0 10%;
     position: absolute;
     top: 235px;
     display: flex;
     align-items: center;
-
-    .imageGrid {
-        margin: 20px auto !important;
-    }
+    justify-content: space-between;
 }

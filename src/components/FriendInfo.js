@@ -1,8 +1,17 @@
 import React from "react";
-import { Popup, Image, Button } from "semantic-ui-react";
+import { Popup, Image, Button, Grid } from "semantic-ui-react";
 import styles from "@/styles/FriendInfo.module.scss";
+import useAppState from "@/useHooks/useAppState";
 
-export default function FriendInfo({ src, name, children, onClick }) {
+export default function FriendInfo({
+    src,
+    name,
+    children,
+    onClickInfo,
+    onClickDelete,
+}) {
+    const appState = useAppState();
+
     return (
         <>
             <div className={styles.imageContainer}>
@@ -16,12 +25,21 @@ export default function FriendInfo({ src, name, children, onClick }) {
                     }
                     on="click"
                     content={
-                        <Button
-                            color="green"
-                            icon="info circle"
-                            content={children || "More Info"}
-                            onClick={onClick}
-                        />
+                        <Grid divided columns="equal">
+                            <Grid.Column></Grid.Column>
+                            <Button
+                                color="green"
+                                icon="info circle"
+                                content={children || "More Info"}
+                                onClick={onClickInfo}
+                            />
+                            <Button
+                                color="red"
+                                icon="user delete"
+                                content={children || "Delete Friend"}
+                                onClick={onClickDelete}
+                            />
+                        </Grid>
                     }
                 />
                 <h3>{name}</h3>

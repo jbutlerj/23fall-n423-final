@@ -50,21 +50,21 @@ export default function gryffindor() {
             </section>
             <section className={styles.houseGrid}>
                 <Grid centered columns="4">
-                    {appState.gryffindor.map((wizardImage) => {
+                    {appState.gryffindor.map((wizard) => {
                         return (
                             <>
                                 <Grid.Column>
                                     {
                                         // if this statement
-                                        wizardImage.image ? (
+                                        wizard.image ? (
                                             // true - then do this
                                             <>
                                                 <WizardImage
-                                                    key={wizardImage.id}
-                                                    src={wizardImage.image}
-                                                    name={wizardImage.name}
+                                                    key={wizard.id}
+                                                    src={wizard.image}
+                                                    name={wizard.name}
                                                     onClick={() =>
-                                                        saveFriend(wizardImage)
+                                                        saveFriend(wizard)
                                                     }
                                                 />
                                             </>
@@ -72,11 +72,11 @@ export default function gryffindor() {
                                             // false - else do this
                                             <>
                                                 <WizardImage
-                                                    key={wizardImage.id}
+                                                    key={wizard.id}
                                                     src="/nopicfound.jpeg"
-                                                    name={wizardImage.name}
+                                                    name={wizard.name}
                                                     onClick={() =>
-                                                        saveFriend(wizardImage)
+                                                        saveFriend(wizard)
                                                     }
                                                 />
                                             </>
