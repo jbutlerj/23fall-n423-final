@@ -53,7 +53,7 @@ export default function ravenclaw() {
                     attributes="Intelligence, Learning, Wisdom, and Wit"
                 />
             </section>
-            <section className="gridContainer">
+            <section className="gridContainer houses">
                 <Grid.Column>
                     <Card.Group itemsPerRow={4} stackable doubling>
                         {appState.ravenclaw.map((wizard) => {

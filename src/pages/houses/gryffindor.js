@@ -10,8 +10,6 @@ export default function gryffindor() {
     const appState = useAppState();
     const router = useRouter();
 
-    // console.log(appState);
-
     React.useEffect(() => {
         if (
             appState.gryffindor.length === 0 &&
@@ -53,7 +51,7 @@ export default function gryffindor() {
                     attributes="Courage, Bravery, Nerve, and Chivalry"
                 />
             </section>
-            <section className="gridContainer">
+            <section className="gridContainer houses">
                 <Grid.Column>
                     <Card.Group itemsPerRow={4} stackable doubling>
                         {appState.gryffindor.map((wizard) => {

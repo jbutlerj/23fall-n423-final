@@ -15,8 +15,7 @@ export default function App({ Component, pageProps }) {
                         <Icon name="home" />
                         Home
                     </Link>
-                    <Link href="/account">My Account</Link>
-                    <Link href="/friends">Friends</Link>
+                    <Link href="/profile">Profile</Link>
                     <div className={styles.dropdown}>
                         <button className={styles.dropbtn}>
                             Houses
