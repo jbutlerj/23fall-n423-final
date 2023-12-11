@@ -11,19 +11,6 @@ export default function Friends() {
     const appState = useAppState();
     console.log(appState.friends);
 
-    function deleteFriend(valuetosearch) {
-        for (var index = 0; index < appState.friends.length; index++) {
-            if (appState.friends[index].id == valuetosearch) {
-                return index;
-            }
-            console.log("wizindex", valuetosearch, index);
-            appState.updateAppState({
-                friends: appState.friends.splice(index, 1),
-            });
-        }
-        return null;
-    }
-
     return (
         <>
             <section className="hero">
@@ -53,9 +40,6 @@ export default function Friends() {
                                                             `/friends/${wizard.id}`
                                                         )
                                                     }
-                                                    onClickDelete={() =>
-                                                        deleteFriend(wizard.id)
-                                                    }
                                                 />
                                             </>
                                         ) : (
@@ -69,9 +53,6 @@ export default function Friends() {
                                                         router.push(
                                                             `/friends/${wizard.id}`
                                                         )
-                                                    }
-                                                    onClickDelete={() =>
-                                                        deleteFriend(wizard)
                                                     }
                                                 />
                                             </>

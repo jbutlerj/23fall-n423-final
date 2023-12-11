@@ -10,6 +10,19 @@ export default function FriendDetails() {
     const [friendData, setFriendData] = React.useState({ loading: true });
     console.log(appState);
 
+    function deleteFriend(valuetosearch) {
+        for (var index = 0; index < appState.friends.length; index++) {
+            if (appState.friends[index].id == valuetosearch) {
+                return index;
+            }
+            console.log("wizindex", valuetosearch, index);
+            appState.updateAppState({
+                friends: appState.friends.splice(index, 1),
+            });
+        }
+        return null;
+    }
+
     React.useEffect(function () {
         if (friendData.id !== router.query.name && router.query.name) {
             console.log(friendData);
@@ -53,6 +66,12 @@ export default function FriendDetails() {
                                     <h3>House: {friendData.house}</h3>
                                     <h3>Ancestry: {friendData.ancestry}</h3>
                                     <h3>Patronus: {friendData.patronus}</h3>
+                                    {/* <Button
+                                        color="red"
+                                        icon="user delete"
+                                        content="Delete Friend"
+                                        onClick={deleteFriend(friendData.id)}
+                                    /> */}
                                 </div>
                             </div>
                         </div>
