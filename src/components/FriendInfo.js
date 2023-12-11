@@ -1,6 +1,6 @@
 import React from "react";
 import { Popup, Image, Button, Grid } from "semantic-ui-react";
-import styles from "@/styles/FriendInfo.module.scss";
+import styles from "@/styles/components/FriendInfo.module.scss";
 import useAppState from "@/useHooks/useAppState";
 
 export default function FriendInfo({ src, name, children, onClickInfo }) {

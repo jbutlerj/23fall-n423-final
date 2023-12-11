@@ -3,7 +3,7 @@ import "semantic-ui-css/semantic.css";
 import { Icon } from "semantic-ui-react";
 import Link from "next/link";
 import "@/styles/globals.css";
-import styles from "@/styles/Menu.module.scss";
+import styles from "@/styles/components/Menu.module.scss";
 import { AppProvider } from "@/useHooks/useAppState";
 
 export default function App({ Component, pageProps }) {
@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
                         <Icon name="home" />
                         Home
                     </Link>
+                    <Link href="/account">My Account</Link>
                     <Link href="/friends">Friends</Link>
                     <div className={styles.dropdown}>
                         <button className={styles.dropbtn}>

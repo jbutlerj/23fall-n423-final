@@ -7,15 +7,7 @@ export default function Home() {
     return (
         <>
             <section>
-                <Hero
-                    imageURL="/homehero.jpeg"
-                    headerText="Hogwarts FriendBook"
-                    subheader="Welcome to the Hogwarts FriendBook"
-                    filler="Select a house banner to the right to see the wizards of
-                        that house. Click the friends link above to see all of
-                        your added friends."
-                />
-
+                <Hero imageURL="/homehero.jpeg" />
                 <div className={styles.bannerContainer}>
                     <Link
                         className={styles.houseContainer}
