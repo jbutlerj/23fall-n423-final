@@ -1,10 +1,9 @@
 import React from "react";
 import useAppState from "@/useHooks/useAppState";
-import { Grid } from "semantic-ui-react";
-import FriendInfo from "@/components/FriendInfo";
+import { Grid, Card } from "semantic-ui-react";
 import { useRouter } from "next/router";
+import FriendCard from "@/components/FriendCard";
 import Hero from "@/components/Hero";
-import styles from "@/styles/Friends.module.scss";
 
 export default function Friends() {
     const router = useRouter();
@@ -13,28 +12,25 @@ export default function Friends() {
 
     return (
         <>
-            <section className="hero">
-                <Hero
-                    imageURL="/friendshero.jpg"
-                    headerText="My Friends"
-                    attributes="Below are all of the wizards you've added as friends."
-                />
+            <section>
+                <Hero imageURL="/friendshero.jpg" headerText="My Friends" />
             </section>
-            <section className={styles.friendGridContainer}>
-                <div className={styles.friendGrid}>
-                    {appState.friends.map((wizard) => {
-                        return (
-                            <>
-                                <Grid.Column>
+            <section className="gridContainer">
+                <Grid.Column>
+                    <Card.Group itemsPerRow={4} stackable doubling>
+                        {appState.friends.map((wizard) => {
+                            return (
+                                <>
                                     {
                                         // if this statement
                                         wizard.image ? (
                                             // true - then do this
                                             <>
-                                                <FriendInfo
+                                                <FriendCard
                                                     key={wizard.id}
                                                     src={wizard.image}
                                                     name={wizard.name}
+                                                    house={wizard.house}
                                                     onClickInfo={() =>
                                                         router.push(
                                                             `/friends/${wizard.id}`
@@ -45,10 +41,11 @@ export default function Friends() {
                                         ) : (
                                             // false - else do this
                                             <>
-                                                <FriendInfo
+                                                <FriendCard
                                                     key={wizard.id}
                                                     src="/nopicfound.jpeg"
                                                     name={wizard.name}
+                                                    house={wizard.house}
                                                     onClickInfo={() =>
                                                         router.push(
                                                             `/friends/${wizard.id}`
@@ -58,11 +55,11 @@ export default function Friends() {
                                             </>
                                         )
                                     }
-                                </Grid.Column>
-                            </>
-                        );
-                    })}
-                </div>
+                                </>
+                            );
+                        })}
+                    </Card.Group>
+                </Grid.Column>
             </section>
         </>
     );

@@ -1,13 +1,14 @@
 import React from "react";
 import Hero from "@/components/Hero";
-import styles from "@/styles/Houses.module.scss";
-import { Grid } from "semantic-ui-react";
+import { Grid, Card } from "semantic-ui-react";
 import useAppState from "@/useHooks/useAppState";
-import WizardImage from "@/components/WizardImage";
+import { useRouter } from "next/router";
+import WizardCard from "@/components/WizardCard";
 
 export default function gryffindor() {
     const [gryffindor, setGryffindor] = React.useState([]);
     const appState = useAppState();
+    const router = useRouter();
 
     // console.log(appState);
 
@@ -52,45 +53,55 @@ export default function gryffindor() {
                     attributes="Courage, Bravery, Nerve, and Chivalry"
                 />
             </section>
-            <section className={styles.houseGrid}>
-                <Grid centered columns="4">
-                    {appState.gryffindor.map((wizard) => {
-                        return (
-                            <>
-                                <Grid.Column>
+            <section className="gridContainer">
+                <Grid.Column>
+                    <Card.Group itemsPerRow={4} stackable doubling>
+                        {appState.gryffindor.map((wizard) => {
+                            return (
+                                <>
                                     {
                                         // if this statement
                                         wizard.image ? (
                                             // true - then do this
                                             <>
-                                                <WizardImage
+                                                <WizardCard
                                                     key={wizard.id}
                                                     src={wizard.image}
                                                     name={wizard.name}
-                                                    onClick={() =>
+                                                    onClickAdd={() =>
                                                         saveFriend(wizard)
+                                                    }
+                                                    onClickInfo={() =>
+                                                        router.push(
+                                                            `/friends/${wizard.id}`
+                                                        )
                                                     }
                                                 />
                                             </>
                                         ) : (
                                             // false - else do this
                                             <>
-                                                <WizardImage
+                                                <WizardCard
                                                     key={wizard.id}
                                                     src="/nopicfound.jpeg"
                                                     name={wizard.name}
-                                                    onClick={() =>
+                                                    onClickAdd={() =>
                                                         saveFriend(wizard)
+                                                    }
+                                                    onClickInfo={() =>
+                                                        router.push(
+                                                            `/friends/${wizard.id}`
+                                                        )
                                                     }
                                                 />
                                             </>
                                         )
                                     }
-                                </Grid.Column>
-                            </>
-                        );
-                    })}
-                </Grid>
+                                </>
+                            );
+                        })}
+                    </Card.Group>
+                </Grid.Column>
             </section>
         </>
     );

@@ -1,81 +1,99 @@
-.heroTextContainer {
-    width: 400px;
-    color: #fff;
+.heroOverlayContainer {
+    width: 100%;
+    height: 700px;
     position: absolute;
-    top: 300px;
-}
-
-.bannerContainer {
-    position: absolute;
-    top: 60px;
-    right: 50px;
-    width: 325px;
-    height: 675px;
+    top: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+    justify-content: space-around;
 
-    .houseContainer {
-        position: relative;
-        width: 100%;
-        height: 155px;
+    .heroTextContainer {
+        width: calc(100% - 500px);
+        height: 100%;
+        color: #fff;
 
-        .banner {
+        h1 {
+            font-family: Hogwarts;
+            font-size: 120px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+
+    .bannerContainer {
+        width: 375px;
+        height: 675px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .houseContainer {
             position: relative;
             width: 100%;
-            height: 100%;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            scale: 1;
-            transition: all 200ms ease-in-out;
+            height: 155px;
 
-            .overlay {
+            .banner {
+                position: relative;
                 width: 100%;
                 height: 100%;
-                position: absolute;
-                background-color: rgba($color: #000000, $alpha: 0.3);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                scale: 1;
                 transition: all 200ms ease-in-out;
+
+                .bannerOverlay {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-color: rgba($color: #000000, $alpha: 0.3);
+                    transition: all 200ms ease-in-out;
+                }
+
+                h4 {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 15px;
+                    color: transparent;
+                    font-size: 36px;
+                    transition: all 200ms ease-in-out;
+                }
             }
 
-            h4 {
-                position: absolute;
-                bottom: 10px;
-                right: 15px;
-                color: transparent;
-                font-size: 36px;
-                transition: all 200ms ease-in-out;
-            }
-        }
+            .banner:hover {
+                scale: 1.05;
 
-        .banner:hover {
-            scale: 1.05;
+                .overlay {
+                    background-color: rgba($color: #000000, $alpha: 0);
+                }
 
-            .overlay {
-                background-color: rgba($color: #000000, $alpha: 0);
+                h4 {
+                    color: #fff;
+                }
             }
 
-            h4 {
-                color: #fff;
+            .gryffindor {
+                background-image: url("/gryffindorhero.jpeg");
             }
-        }
 
-        .gryffindor {
-            background-image: url("/gryffindorhero.jpeg");
-        }
+            .hufflepuff {
+                background-image: url("/hufflepuffhero.jpeg");
+            }
 
-        .hufflepuff {
-            background-image: url("/hufflepuffhero.jpeg");
-        }
+            .ravenclaw {
+                background-image: url("/ravenclawhero.jpeg");
+            }
 
-        .ravenclaw {
-            background-image: url("/ravenclawhero.jpeg");
-        }
-
-        .slytherin {
-            background-image: url("/slytherinhero.jpeg");
+            .slytherin {
+                background-image: url("/slytherinhero.jpeg");
+            }
         }
     }
 }

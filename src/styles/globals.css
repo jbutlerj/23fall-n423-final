@@ -2,3 +2,21 @@
     font-family: Hogwarts;
     src: url(fonts/Hogwarts.ttf);
 }
+
+body,
+html {
+    background-color: #000;
+}
+
+.gridContainer {
+    width: 80%;
+    margin: 0 10%;
+    position: absolute;
+    top: 235px;
+}
+
+.cardImages {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}

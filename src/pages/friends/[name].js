@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Loader, Image, Button } from "semantic-ui-react";
-import styles from "@/styles/FriendDetails.module.scss";
+import { Loader, Image } from "semantic-ui-react";
+import styles from "@/styles/FriendProfile.module.scss";
 import useAppState from "@/useHooks/useAppState";
 
 export default function FriendDetails() {
@@ -10,18 +10,18 @@ export default function FriendDetails() {
     const [friendData, setFriendData] = React.useState({ loading: true });
     console.log(appState);
 
-    function deleteFriend(valuetosearch) {
-        for (var index = 0; index < appState.friends.length; index++) {
-            if (appState.friends[index].id == valuetosearch) {
-                return index;
-            }
-            console.log("wizindex", valuetosearch, index);
-            appState.updateAppState({
-                friends: appState.friends.splice(index, 1),
-            });
-        }
-        return null;
-    }
+    // function deleteFriend(valuetosearch) {
+    //     for (var index = 0; index < appState.friends.length; index++) {
+    //         if (appState.friends[index].id == valuetosearch) {
+    //             return index;
+    //         }
+    //         console.log("wizindex", valuetosearch, index);
+    //         appState.updateAppState({
+    //             friends: appState.friends.splice(index, 1),
+    //         });
+    //     }
+    //     return null;
+    // }
 
     React.useEffect(function () {
         if (friendData.id !== router.query.name && router.query.name) {
