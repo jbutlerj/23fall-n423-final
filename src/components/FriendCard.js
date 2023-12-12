@@ -5,9 +5,13 @@ export default function FriendCard({
     src,
     name,
     house,
+    id,
     onClickInfo,
-    onClickDelete,
+    removeFriendByID,
 }) {
+    function unfriendbyID() {
+        removeFriendByID(id);
+    }
     return (
         <>
             <Card raised>
@@ -20,7 +24,7 @@ export default function FriendCard({
                     </Card.Description>
                 </Card.Content>
                 <Card.Content>
-                    <Grid columns={2}>
+                    <Grid columns={1}>
                         <Grid.Column>
                             <Button
                                 color="green"
@@ -34,11 +38,11 @@ export default function FriendCard({
                                 </Button.Content>
                             </Button>
                         </Grid.Column>
-                        <Grid.Column>
+                        {/* <Grid.Column>
                             <Button
                                 color="red"
                                 animated="vertical"
-                                onClick={onClickDelete}
+                                onClick={unfriendbyID}
                                 fluid
                             >
                                 <Button.Content hidden>Unfriend</Button.Content>
@@ -46,7 +50,7 @@ export default function FriendCard({
                                     <Icon name="user delete" />
                                 </Button.Content>
                             </Button>
-                        </Grid.Column>
+                        </Grid.Column> */}
                     </Grid>
                 </Card.Content>
             </Card>
