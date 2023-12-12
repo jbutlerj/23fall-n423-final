@@ -10,6 +10,7 @@ export function AppProvider({ children }) {
         slytherin: [],
         hufflepuff: [],
         ravenclaw: [],
+        potionInventory: [],
         gryffindorLoading: false,
         slytherinLoading: false,
         hufflepuffLoading: false,

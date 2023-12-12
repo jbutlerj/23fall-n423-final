@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
                         <Icon name="home" />
                         Home
                     </Link>
-                    <Link href="/profile">Profile</Link>
+                    <Link href="/friends">Friends</Link>
                     <div className={styles.dropdown}>
                         <button className={styles.dropbtn}>
                             Houses
@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }) {
                             <Link href="/houses/slytherin">Slytherin</Link>
                         </div>
                     </div>
+                    <Link href="/potions">Potions</Link>
                 </nav>
             </header>
             {/* <Menu inverted>

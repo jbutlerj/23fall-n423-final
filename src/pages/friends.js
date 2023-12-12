@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import FriendCard from "@/components/FriendCard";
 import Hero from "@/components/Hero";
 
-export default function Profile() {
+export default function Friends() {
     const router = useRouter();
     const appState = useAppState();
     console.log(appState.friends);
@@ -15,7 +15,7 @@ export default function Profile() {
             <section>
                 <Hero imageURL="/friendshero.jpg" headerText="My Friends" />
             </section>
-            <section className="gridContainer profile">
+            <section className="gridContainer">
                 <Grid.Column>
                     <Card.Group itemsPerRow={4} stackable doubling>
                         {appState.friends.map((wizard) => {

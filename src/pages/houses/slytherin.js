@@ -53,7 +53,7 @@ export default function slytherin() {
                     attributes="Ambition, Cunning, Leadership, and Resourcefulness"
                 />
             </section>
-            <section className="gridContainer houses">
+            <section className="gridContainer">
                 <Grid.Column>
                     <Card.Group itemsPerRow={4} stackable doubling>
                         {appState.slytherin.map((wizard) => {

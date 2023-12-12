@@ -51,7 +51,7 @@ export default function gryffindor() {
                     attributes="Courage, Bravery, Nerve, and Chivalry"
                 />
             </section>
-            <section className="gridContainer houses">
+            <section className="gridContainer">
                 <Grid.Column>
                     <Card.Group itemsPerRow={4} stackable doubling>
                         {appState.gryffindor.map((wizard) => {

@@ -2,7 +2,6 @@ import React from "react";
 import Hero from "@/components/Hero";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
-import { Card, Form, Button } from "semantic-ui-react";
 
 export default function Home() {
     return (
@@ -12,33 +11,7 @@ export default function Home() {
                 <div className={styles.heroOverlayContainer}>
                     <div className={styles.heroTextContainer}>
                         <h1>Hogwarts FriendBook</h1>
-                        <h3>Please create your account below</h3>
-                        <div className={styles.accountCreationFromContainer}>
-                            <Card centered>
-                                <Form>
-                                    <Form.Field>
-                                        <label>First Name</label>
-                                        <input placeholder="First Name" />
-                                    </Form.Field>
-                                    <Form.Field>
-                                        <label>Last Name</label>
-                                        <input placeholder="Last Name" />
-                                    </Form.Field>
-                                    <Form.Field>
-                                        <label>House</label>
-                                        <input placeholder="Gryffindor, Hufflepuff, Ravenclaw, Slytherin..." />
-                                    </Form.Field>
-                                    <Form.Field>
-                                        <label>Ancestry</label>
-                                        <input placeholder="pure-blood, half-blood, muggleborn" />
-                                    </Form.Field>
-                                    <Form.Field>
-                                        <label>Patronus</label>
-                                        <input placeholder="Stag, Doe, Phoenix, Unicorn..." />
-                                    </Form.Field>
-                                </Form>
-                            </Card>
-                        </div>
+                        <h3>Please create your profile below</h3>
                     </div>
                     <div className={styles.bannerContainer}>
                         <Link

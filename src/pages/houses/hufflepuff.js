@@ -53,7 +53,7 @@ export default function Hufflepuff() {
                     attributes="Work, Patience, Justice, and Loyalty"
                 />
             </section>
-            <section className="gridContainer houses">
+            <section className="gridContainer">
                 <Grid.Column>
                     <Card.Group itemsPerRow={4} stackable doubling>
                         {appState.hufflepuff.map((wizard) => {
