@@ -10,6 +10,17 @@ export default function Friends() {
     const appState = useAppState();
     console.log(appState.friends);
 
+    // function removeFriendByID(wizardID) {
+    //     appState.updateAppState({
+    //         friends: appState.friends.filter((wizard) => {
+    //             // if returns true then keep
+    //             if (wizard.id !== wizardID) return true;
+    //             // if returns false then remove
+    //             else return false;
+    //         }),
+    //     });
+    // }
+
     return (
         <>
             <section>
@@ -36,6 +47,9 @@ export default function Friends() {
                                                             `/friends/${wizard.id}`
                                                         )
                                                     }
+                                                    // onClickDelete={
+                                                    //     removeFriendByID
+                                                    // }
                                                 />
                                             </>
                                         ) : (
@@ -51,6 +65,9 @@ export default function Friends() {
                                                             `/friends/${wizard.id}`
                                                         )
                                                     }
+                                                    // onClickDelete={
+                                                    //     onClickDelete
+                                                    // }
                                                 />
                                             </>
                                         )

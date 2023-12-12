@@ -11,7 +11,15 @@ export default function Home() {
                 <div className={styles.heroOverlayContainer}>
                     <div className={styles.heroTextContainer}>
                         <h1>Hogwarts FriendBook</h1>
-                        <h3>Please create your profile below</h3>
+                        <h3>
+                            Explore houses by clicking the banners or selecting
+                            a house from the dropdown menu.
+                        </h3>
+                        <h3>See all of your friends in the Friends section</h3>
+                        <h3>
+                            Head over to the Potions section to manage your
+                            potions book.
+                        </h3>
                     </div>
                     <div className={styles.bannerContainer}>
                         <Link

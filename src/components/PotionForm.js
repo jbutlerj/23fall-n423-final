@@ -23,7 +23,9 @@ export default function PotionForm({
             <Form onSubmit={formSubmitted}>
                 <Card centered>
                     <Card.Content>
-                        <Header as="h2">Create Potion</Header>
+                        <Header as="h2">
+                            {oldValues.id ? "Edit" : "Create"} Potion
+                        </Header>
                     </Card.Content>
                     <Card.Content>
                         <Form.Field>

@@ -33,9 +33,12 @@ export default function Potions() {
     }
 
     function editPotionByID(newPotionData) {
-        // appState.updateAppState({
-        //     potionInventory:
-        // })
+        appState.potionInventory.map((potion) => {
+            // if the item doesn't match then keep it the same
+            if (potion.id !== newPotionData.id) return potion;
+            // else keep the new data
+            return newPotionData;
+        });
     }
 
     return (
@@ -52,7 +55,6 @@ export default function Potions() {
                         <Card.Group itemsPerRow={3} stackable doubling>
                             {appState.potionInventory.map((potion) => {
                                 {
-                                    /* {inventory.map((potion) => { */
                                 }
                                 return (
                                     <PotionCard
@@ -62,6 +64,7 @@ export default function Potions() {
                                         ingredients={potion.ingredients}
                                         id={potion.id}
                                         removePotionByID={removePotionByID}
+                                        editPotionByID={editPotionByID}
                                     />
                                 );
                             })}

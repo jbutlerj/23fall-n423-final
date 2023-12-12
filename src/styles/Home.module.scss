@@ -11,6 +11,10 @@
         width: calc(100% - 500px);
         height: 100%;
         color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         h1 {
             font-family: Hogwarts;
